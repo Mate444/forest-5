@@ -13,25 +13,14 @@ public class HealthSystem {
   void Update() {
         
     }
-  public int Heal(int amount) {
-    if (health == 100) {
-      return health;
-    }
-    
-    if (health + amount > 100) {
-      health = 100;
-      return health;
-    }
-
-    return health += amount;
+  private const int maxHealth = 100;
+  public void Heal(int amount) {
+    health = Math.Min(maxHealth, amount + health);
   }
 
+  private const int minHealth = 0;
   public void Damage(int amount) {
-    if (health - amount <= 0) {
-      health = 0;
-    } else {
-      health -= amount;
-    }
+    health = Math.Max(minHealth, health - amount);
   }
 
   public int GetHealth() {
