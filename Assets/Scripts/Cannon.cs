@@ -24,6 +24,7 @@ public class Cannon : MonoBehaviour {
     Instantiate(prefab, spawnPoint.transform.forward, spawnPoint.transform.rotation);
   }
   void FireBarrage(int times) {
+    if (!prefab) return;
     for (int i = 0; i < times; i++)
     {
       Instantiate(prefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
