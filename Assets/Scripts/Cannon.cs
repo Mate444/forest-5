@@ -10,6 +10,9 @@ public class Cannon : MonoBehaviour {
   }
 
   void Update() {
+    if (Input.GetKeyDown("f")) {
+      Fire();
+    }
     if (Input.GetKeyDown("j")) {
         FireBarrage(2);
       }
